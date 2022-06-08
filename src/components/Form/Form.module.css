@@ -1,0 +1,23 @@
+.inputForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.25rem;
+}
+
+.input {
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: var(--main-border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.button {
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: var(--main-border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-image: var(--gradient)
+}
