@@ -19,5 +19,7 @@
     height: 2.5rem;
     border-radius: var(--main-border-radius);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    background-image: var(--gradient)
+    background-image: var(--gradient);
+    color: var(--main-text-color);
+    font-weight: 800;
 }
