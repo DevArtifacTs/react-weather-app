@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from './Form.module.css';
 
-function Form(props) {
+function Form({submitSearch}) {
 
     const [location, setLocation] = React.useState('');
 
@@ -13,6 +13,8 @@ function Form(props) {
     const handleSubmit = e => {
         e.preventDefault();
         if(!location || location === '') return;
+
+        submitSearch(location);
        
     }
 
