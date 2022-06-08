@@ -10,21 +10,24 @@ import Forecast from '../Forecast/Forecast';
 //style
 import styles from './Page.module.css';
 
+// hooks
+import useForecastHook from '../../hooks/useForecast';
+
 function Page(props) {
+    const { isError, isLoading, forecast } = useForecastHook();
     return (
         <>
-         <Header />
-         <div className={styles.box}>
-             {/* Form */}
-             <Form />
-             {/* Error */}
-             <Error />
-             {/* Loader */}
-             <Loader />
-             {/* Forecast */}
-             <Forecast />
-
-         </div>
+        <Header />
+        <div className={styles.box}>
+            {/* Form */}
+            {!isLoading && <Form />}
+            {/* Error */}
+            {isError && <Error />}
+            {/* Loader */}
+            {isLoading && <Loader />}
+            {/* Forecast */}
+            {forecast && <Forecast />}
+        </div>
 
         </>
     );
