@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 // components
 import Header from '../Header/Header';
@@ -17,24 +17,37 @@ function Page(props) {
     const { isError, isLoading, forecast, submitRequest } = useForecastHook();
 
     const handleSubmit = value => {
-        console.log({value});
+        // console.log({value});
         submitRequest(value);
     }
+
+    useEffect(()=>{
+        console.log('forecast', forecast)
+    }, [isError, isLoading, forecast])
 
     return (
         <>
         <Header />
-        <div className={styles.box}>
-            {/* Form */}
-            {!isLoading && <Form submitSearch={handleSubmit} />}
-            {/* Error */}
-            {isError && <Error />}
-            {/* Loader */}
-            {/* if isLoading then render <Loader/> component */}
-            {isLoading && <Loader />}
-            {/* Forecast */}
-            {forecast && <Forecast />}
+        <div className={`${styles.box}`}>
+            <>
+                {/* Form */}
+                {!isLoading && <Form submitSearch={handleSubmit} />}
+                {/* Error */}
+                {isError && <Error message={isError} />}
+                {/* Loader */}
+                {/* if isLoading then render <Loader/> component */}
+                {isLoading && <Loader />}
+            </>
         </div>
+        
+        {/* Forecast */}
+        <div className={`${styles.box}`}>
+                {!forecast ?
+                    <h3>Search to display weather data</h3>
+                    :
+                    <Forecast forecastData = {forecast} />
+                }
+            </div>
 
         </>
     );
