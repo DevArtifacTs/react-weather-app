@@ -130,6 +130,28 @@
         margin-bottom: 0;
         padding: 0;
     }
+
+    .card_feel{
+        background: rgba(126, 122, 122, 0.7) url('../../assets/feelslike.jpg');
+        background-repeat: no-repeat ;
+        background-size: cover;
+        background-blend-mode: darken;
+        background-position: center;
+    } 
+    .card_humidity {
+        background: rgba(197, 191, 191, 0.7) url('../../assets/humidity.jpg');;
+        background-repeat: no-repeat ;
+        background-size: cover;
+        background-blend-mode: darken;
+        background-position: center;
+    } 
+    .card_wind {
+        background: rgba(161, 158, 158, 0.7) url('../../assets/windspeed.jpg');;
+        background-repeat: no-repeat ;
+        background-size: cover;
+        background-blend-mode: darken;
+        background-position: center;
+    }
 }
 
 @media only screen and (max-width: 400px){
