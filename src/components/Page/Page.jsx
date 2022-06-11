@@ -22,7 +22,7 @@ function Page(props) {
     }
 
     useEffect(()=>{
-        console.log('forecast', forecast)
+        // console.log('forecast', forecast)
     }, [isError, isLoading, forecast])
 
     return (
