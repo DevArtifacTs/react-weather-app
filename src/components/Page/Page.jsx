@@ -27,9 +27,8 @@ function Page(props) {
 
     return (
         <>
-        <div className='bg-image'></div>
         <Header />
-        <div className={`${styles.box} ${styles.box_bg_img}`}>
+        <div className={`${styles.form_box} ${styles.box_bg_img}`}>
             <>
                 {/* Form */}
                 {!isLoading && <Form submitSearch={handleSubmit} />}
@@ -42,10 +41,10 @@ function Page(props) {
         </div>
 
         {/* Forecast */}
-        <div className={`${styles.box}`}>
+        <div className={`${styles.data_box}`}>
                 {isError && <Error message={isError} setIsError={setIsError} setIsLoading={setIsLoading} />}
                 {!forecast ?
-                    <h3>Search to display weather data</h3>
+                    <h3 style={{textAlign:'center'}} >Search to display weather data</h3>
                     :
                     <Forecast forecastData = {forecast} />
                 }

@@ -1,4 +1,20 @@
-.box {
+.form_box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: var(--main-border-radius);
+    -webkit-box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-background-card);
+    color:  var(--main-text-color);
+    margin-top: 0.55rem ;
+    width: 85%;
+    max-width: 675px;
+    min-height: 300px;
+}
+.data_box {
     position: relative;
     display: flex;
     align-items: center;
@@ -22,6 +38,10 @@
     background-position: center;
 }
 
-
+@media only screen and (max-width: 575px) {
+    .data_box{
+        flex-direction: column;
+    }
+}
 
 
