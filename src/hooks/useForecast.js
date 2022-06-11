@@ -64,6 +64,8 @@ const useForecastHook = () => {
             setErrorResetButton(true);
             //set Error Meassage
             setIsError('there is no such a location!');
+            // clear previous forecast data
+            setForecast(false);
             console.log('err: ', err);
         }
 

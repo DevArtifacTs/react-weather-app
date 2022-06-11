@@ -43,7 +43,7 @@ function Page(props) {
         {/* Forecast */}
         <div className={`${styles.data_box}`}>
                 {isError && <Error message={isError} setIsError={setIsError} setIsLoading={setIsLoading} />}
-                {!forecast ?
+                {!forecast  ?
                     <h3 style={{textAlign:'center'}} >Search to display weather data</h3>
                     :
                     <Forecast forecastData = {forecast} />
