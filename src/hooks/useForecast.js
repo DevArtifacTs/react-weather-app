@@ -16,6 +16,7 @@ const useForecastHook = () => {
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [forecast, setForecast] = useState(false);
+    const [ErrorResetButton, setErrorResetButton] = useState(false);
     
     //1.get lat and long by enter city name 
     // const getLatLong = async (cityName) => {
@@ -53,9 +54,22 @@ const useForecastHook = () => {
     // }
 
     const getCurrentForecastByName = async city => {
-        const {data} = await axios.get(`${ALTER_URL}`, {params : {q : city, units : 'metric', appid : API_KEY}});
-        return data ;
+        let response
+
+        try {
+            response = await axios.get(`${ALTER_URL}`, {params : {q : city, units : 'metric', appid : API_KEY}})
+
+        } catch(err) {
+            //set error reset button
+            setErrorResetButton(true);
+            //set Error Meassage
+            setIsError('there is no such a location!');
+            console.log('err: ', err);
+        }
+
+        return response.data ;
     }
+    
 
     // call the api
     const submitRequest = async location => {
@@ -68,10 +82,17 @@ const useForecastHook = () => {
         // const currentForecast = await getForecast(lat, lon, 'current');
         // const currentDataForecast = await getCurrentDataForecast(lat, lon);
         const currentDataForecast = await getCurrentForecastByName(location);
+        console.log('handle error', currentDataForecast.message);
         console.log('currentDataForecast: ', currentDataForecast);
 
+        if(currentDataForecast === undefined){
+            console.log('there is no currentDataForecast')
+            setIsLoading(false);
+
+        }
+
         // gatherForecastData(currentForecast, location)
-           setForecast( gatherForecastData(currentDataForecast, location))
+        setForecast( gatherForecastData(currentDataForecast, location))
         setIsLoading(false);
 
         
@@ -82,6 +103,7 @@ const useForecastHook = () => {
         isError, 
         isLoading, 
         forecast,
+        ErrorResetButton,
         submitRequest,
     }
 }
