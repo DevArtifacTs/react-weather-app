@@ -15,7 +15,7 @@ const Error = ({ message, setIsError, setIsLoading }) => {
     return (
         <>
             <div className={`${styles.error}`} role="alert">
-                <button onClick={handleClick}>RESET</button>
+                <button className={`${styles.btn}`} onClick={handleClick}>RESET</button>
                 {message}
             </div>
         </>

@@ -1,11 +1,23 @@
 .error {
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items : center;
+    gap: 0.75rem;
 }
 
 .btn {
-    
+    max-width: 80%;
+    min-width: 5rem;
+    padding: 0.25rem;
+    border-radius: var(--secondary-border-radius);
+    background-image: var(--gradient);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    color : var(--main-text-color);
+}
+.btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
