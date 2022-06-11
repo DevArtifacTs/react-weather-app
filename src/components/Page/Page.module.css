@@ -15,4 +15,13 @@
     min-height: 300px;
 }
 
+.box_bg_img {
+    background-image: url('../../assets/main-bg.jpg');
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
 

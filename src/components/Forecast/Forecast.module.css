@@ -30,6 +30,11 @@
     padding : 1rem 0.25rem;
     border-radius: 12px;
     background-color: rgba(255,255,255, 0.2);
+    background: rgba(126, 122, 122, 0.7) url('../../assets/weather.jpg');
+    background-blend-mode : draken;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center;
 }
 
 .card_header {
@@ -56,4 +61,27 @@
     padding: 1rem;
     border-radius: 12px;
     background-color: rgba(255,255,255, 0.2);
+}
+
+.card_feel {
+    background: rgba(126, 122, 122, 0.7) url('../../assets/feelslike.jpg');
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
+}
+
+.card_humidity {
+    background: rgba(197, 191, 191, 0.7) url('../../assets/humidity.jpg');;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
+}
+.card_wind {
+    background: rgba(161, 158, 158, 0.7) url('../../assets/windspeed.jpg');;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-position: center;
 }

@@ -27,8 +27,9 @@ function Page(props) {
 
     return (
         <>
+        <div className='bg-image'></div>
         <Header />
-        <div className={`${styles.box}`}>
+        <div className={`${styles.box} ${styles.box_bg_img}`}>
             <>
                 {/* Form */}
                 {!isLoading && <Form submitSearch={handleSubmit} />}
@@ -39,7 +40,7 @@ function Page(props) {
                 {isLoading && <Loader />}
             </>
         </div>
-        
+
         {/* Forecast */}
         <div className={`${styles.box}`}>
                 {!forecast ?

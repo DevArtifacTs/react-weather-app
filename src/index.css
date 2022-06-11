@@ -5,7 +5,7 @@
   --bg-color : #343d4d;
   -bg-color--card: #222831;
 
-  --main-text-color:#FFFFFF;
+  --main-text-color:#ffffff;
   --main-border-radius: 25px;
   --secondary-border-radius: 15px;
 }
@@ -16,4 +16,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--bg-color);
   color: var(--main-text-color);
+  
+  
 }
+
