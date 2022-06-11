@@ -6,7 +6,7 @@ import styles from './Forecast.module.css';
 
 function Forecast({forecastData}) {
 
-    console.log(forecastData)
+    // console.log(forecastData)
     return (
         <div className={`${styles.container}`} >
                 <div className={`${styles.main}`}>

@@ -11,7 +11,7 @@ const API_KEY = 'cde3993cbe012d67a44a7518e13b172c'
 const REQUEST_URL =`${BASE_URL}`;
 
 const useForecastHook = () => {
-    console.log('useForecastHook');
+    // console.log('useForecastHook');
 
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +43,7 @@ const useForecastHook = () => {
     const gatherForecastData =  (data, location) => {
         // current weather
         const current =  getCurrentForecast(data, location);
-        console.log('current: ', current);
+        // console.log('current: ', current);
         return current
     }
 
@@ -82,8 +82,8 @@ const useForecastHook = () => {
         // const currentForecast = await getForecast(lat, lon, 'current');
         // const currentDataForecast = await getCurrentDataForecast(lat, lon);
         const currentDataForecast = await getCurrentForecastByName(location);
-        console.log('handle error', currentDataForecast.message);
-        console.log('currentDataForecast: ', currentDataForecast);
+        // console.log('handle error', currentDataForecast.message);
+        // console.log('currentDataForecast: ', currentDataForecast);
 
         if(currentDataForecast === undefined){
             console.log('there is no currentDataForecast')
