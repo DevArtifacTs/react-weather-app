@@ -30,8 +30,8 @@ function Forecast({forecastData}) {
                         <h3>
                             Feels Like
                         </h3>
-                        <h3>
-                            {forecastData.feelLike}
+                        <h3 style={{textTransform:'uppercase'}}>
+                            {forecastData.feelLike}&#176;c
                         </h3>
                     </div>
                     <div className={`${styles.card}  ${styles.card_humidity}`} >
