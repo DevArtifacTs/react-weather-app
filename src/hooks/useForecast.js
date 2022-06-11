@@ -104,6 +104,8 @@ const useForecastHook = () => {
         isLoading, 
         forecast,
         ErrorResetButton,
+        setIsError,
+        setIsLoading,
         submitRequest,
     }
 }

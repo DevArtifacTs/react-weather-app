@@ -14,7 +14,7 @@ import styles from './Page.module.css';
 import useForecastHook from '../../hooks/useForecast';
 
 function Page(props) {
-    const { isError, isLoading, forecast, submitRequest } = useForecastHook();
+    const { isError, isLoading, forecast, setIsError, setIsLoading, submitRequest } = useForecastHook();
 
     const handleSubmit = value => {
         // console.log({value});
@@ -34,7 +34,7 @@ function Page(props) {
                 {/* Form */}
                 {!isLoading && <Form submitSearch={handleSubmit} />}
                 {/* Error */}
-                {isError && <Error message={isError} />}
+                {/* {isError && <Error message={isError} />} */}
                 {/* Loader */}
                 {/* if isLoading then render <Loader/> component */}
                 {isLoading && <Loader />}
@@ -43,6 +43,7 @@ function Page(props) {
 
         {/* Forecast */}
         <div className={`${styles.box}`}>
+                {isError && <Error message={isError} setIsError={setIsError} setIsLoading={setIsLoading} />}
                 {!forecast ?
                     <h3>Search to display weather data</h3>
                     :
