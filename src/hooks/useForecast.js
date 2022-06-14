@@ -7,8 +7,7 @@ import getCurrentForecast from "../helpers/getCurrentForecast";
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall';
 const ALTER_URL = 'https://api.openweathermap.org/data/2.5/weather';
 const LAT_LONG_URL = 'http://api.openweathermap.org/geo/1.0/direct';
-// const API_KEY = process.env.REACT_APP_API_KEY
-const API_KEY = 'cde3993cbe012d67a44a7518e13b172c'
+const API_KEY = process.env.REACT_APP_API_KEY
 const REQUEST_URL =`${BASE_URL}`;
 
 const useForecastHook = () => {
