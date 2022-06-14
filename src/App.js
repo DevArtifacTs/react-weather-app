@@ -3,7 +3,7 @@ import Page from './components/Page/Page';
 
 
 //call config function
-const dotenv = require('dotenv').config;
+const dotenv = require('dotenv').config();
 
 function App() {
   return (
